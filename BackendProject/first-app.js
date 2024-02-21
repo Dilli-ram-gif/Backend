@@ -1,3 +1,8 @@
-const fs = require('fs');
+const http = require('http');
 
-fs.writeFileSync("demo.txt", "Hello World");
+const server = http.createServer((req, res) => {
+  res.write("Hello World!")
+  res.end();
+});
+
+server.listen(8080);
